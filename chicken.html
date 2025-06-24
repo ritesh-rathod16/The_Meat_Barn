@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - FarmFresh</title>
+    <title>Chicken - FarmFresh</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -44,190 +44,171 @@
             margin: 10px auto 0;
         }
         
-        .contact-container {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        
-        .contact-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #e67e22;
-        }
-        
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .contact-icon {
-            font-size: 20px;
-            color: #e67e22;
-            margin-right: 15px;
-            margin-top: 3px;
-        }
-        
-        .contact-text h4 {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-        
-        .contact-text p, .contact-text a {
-            color: #7f8c8d;
-            text-decoration: none;
-        }
-        
-        .contact-text a:hover {
-            color: #e67e22;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #f1f1f1;
-            border-radius: 50%;
-            color: #7f8c8d;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: #e67e22;
-            color: white;
-        }
-        
-        .contact-form {
-            flex: 1;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: #e67e22;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background-color: #d35400;
-        }
-        
-        .map-container {
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 60px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .faq-section {
-            margin-bottom: 60px;
-        }
-        
-        .faq-item {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            padding: 20px;
+        .category-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            font-weight: 500;
+            margin-bottom: 30px;
         }
         
-        .faq-question i {
+        .category-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+        
+        .filter-options {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #e67e22;
+            color: white;
+        }
+        
+        .sort-options {
+            display: flex;
+            align-items: center;
+        }
+        
+        .sort-options select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
         
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
+        .product-card:hover {
+            transform: translateY(-5px);
         }
         
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
+        .product-image {
+            height: 180px;
             overflow: hidden;
-            transition: max-height 0.3s, padding 0.3s;
         }
         
-        .faq-item.active .faq-answer {
-            padding: 0 20px 20px;
-            max-height: 500px;
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-info h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .weight-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .weight-option {
+            font-size: 12px;
+            padding: 4px 8px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-right: 10px;
+        }
+        
+        .original-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #95a5a6;
+        }
+        
+        .discount {
+            font-size: 12px;
+            background-color: #fdeaea;
+            color: #e74c3c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #d35400;
         }
         
         /* Responsive Styles */
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
-            .contact-container {
-                flex-direction: column;
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .map-container {
-                height: 300px;
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -248,11 +229,19 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="shop-by-category.html">Shop by Category</a></li>
+                        <li class="dropdown">
+                            <a href="shop-by-category.html">Shop by Category <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="goat.html">Goat</a>
+                                <a href="chicken.html" class="active">Chicken</a>
+                                <a href="seafood.html">Seafood</a>
+                                <a href="dairy.html">Dairy</a>
+                            </div>
+                        </li>
                         <li><a href="offers.html">Offers</a></li>
                         <li><a href="recipes-blog.html">Recipes/Blog</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
                 
@@ -268,197 +257,216 @@
     </header>
 
     <div class="container">
-        <h1 class="section-title">Contact Us</h1>
+        <h1 class="section-title">Chicken</h1>
         
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-card">
-                    <h3>Get In Touch</h3>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Our Office</h4>
-                            <p>123 FarmFresh Avenue, Food District, Bangalore, Karnataka 560001</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Call Us</h4>
-                            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
-                            <p><a href="tel:+918012345678">+91 80123 45678</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Email Us</h4>
-                            <p><a href="mailto:info@farmfresh.com">info@farmfresh.com</a></p>
-                            <p><a href="mailto:support@farmfresh.com">support@farmfresh.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Working Hours</h4>
-                            <p>Monday - Saturday: 8:00 AM - 8:00 PM</p>
-                            <p>Sunday: 9:00 AM - 6:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <h3>Customer Support</h3>
-                    <p>Our customer support team is available to help with any questions or issues you may have regarding your orders, deliveries, or our products.</p>
-                    <p>For order-related queries, please have your order number ready when you contact us.</p>
-                </div>
+        <div class="category-description">
+            <p>Our chickens are raised in free-range farms with no antibiotics or hormones. They're fed a natural diet and processed in hygienic conditions to ensure you get the freshest, healthiest chicken possible.</p>
+        </div>
+        
+        <div class="category-header">
+            <div class="filter-options">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Boneless</button>
+                <button class="filter-btn">Curry Cut</button>
+                <button class="filter-btn">Special Cuts</button>
             </div>
             
-            <div class="contact-form">
-                <h3 style="font-size: 20px; margin-bottom: 20px; color: #2c3e50;">Send Us a Message</h3>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject">
-                            <option value="general">General Inquiry</option>
-                            <option value="order">Order Related</option>
-                            <option value="delivery">Delivery Issue</option>
-                            <option value="product">Product Question</option>
-                            <option value="feedback">Feedback/Suggestion</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+            <div class="sort-options">
+                <span>Sort by:</span>
+                <select>
+                    <option>Popularity</option>
+                    <option>Price - Low to High</option>
+                    <option>Price - High to Low</option>
+                    <option>Newest First</option>
+                </select>
             </div>
         </div>
         
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.801234569045!2d77.59451431482136!3d12.917690990891254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15c49c040309%3A0x6553433f72187bdb!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1625060000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        
-        <div class="faq-section">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What are your delivery timings?</span>
-                    <i class="fas fa-chevron-down"></i>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Chicken Breast">
                 </div>
-                <div class="faq-answer">
-                    <p>We deliver daily from 8:00 AM to 8:00 PM. Orders placed before 6:00 PM will be delivered the next day. For specific time slots, you can contact our customer support after placing your order.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How do I track my order?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Once your order is shipped, you'll receive an SMS and email with a tracking link. You can also track your order by logging into your account on our website.</p>
+                <div class="product-info">
+                    <h3>Fresh Chicken Breast (Boneless)</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹249</span>
+                        <span class="original-price">₹299</span>
+                        <span class="discount">17% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>What is your return policy?</span>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chicken Curry Cut">
                 </div>
-                <div class="faq-answer">
-                    <p>We accept returns within 24 hours of delivery if the product is damaged or not as described. Please contact our customer support immediately if you need to return an item.</p>
+                <div class="product-info">
+                    <h3>Chicken Curry Cut (With Skin)</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹199</span>
+                        <span class="original-price">₹249</span>
+                        <span class="discount">20% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Do you offer bulk discounts?</span>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chicken Thighs">
                 </div>
-                <div class="faq-answer">
-                    <p>Yes, we offer special discounts for bulk orders. Please contact our sales team at bulk@farmfresh.com or call +91 98765 43210 for customized quotes.</p>
+                <div class="product-info">
+                    <h3>Chicken Thighs (Boneless)</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹279</span>
+                        <span class="original-price">₹329</span>
+                        <span class="discount">15% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>How do I change or cancel my order?</span>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chicken Drumsticks">
                 </div>
-                <div class="faq-answer">
-                    <p>You can change or cancel your order within 1 hour of placing it by calling our customer support. After that, changes may not be possible as we begin processing your order immediately.</p>
+                <div class="product-info">
+                    <h3>Chicken Drumsticks</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹229</span>
+                        <span class="original-price">₹279</span>
+                        <span class="discount">18% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chicken Wings">
+                </div>
+                <div class="product-info">
+                    <h3>Chicken Wings</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹189</span>
+                        <span class="original-price">₹229</span>
+                        <span class="discount">17% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chicken Mince">
+                </div>
+                <div class="product-info">
+                    <h3>Chicken Mince (Keema)</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹199</span>
+                        <span class="original-price">₹249</span>
+                        <span class="discount">20% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chicken Liver">
+                </div>
+                <div class="product-info">
+                    <h3>Chicken Liver</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹149</span>
+                        <span class="original-price">₹179</span>
+                        <span class="discount">17% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Whole Chicken">
+                </div>
+                <div class="product-info">
+                    <h3>Whole Chicken (Skinless)</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">1kg</span>
+                        <span class="weight-option">1.5kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹349</span>
+                        <span class="original-price">₹399</span>
+                        <span class="discount">13% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Contact page functionality
+        // Chicken category page functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // FAQ accordion
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current item
-                    item.classList.toggle('active');
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // In a real implementation, this would filter the products
                 });
             });
             
-            // Form submission
-            const contactForm = document.querySelector('.contact-form form');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! Our team will get back to you within 24 hours.');
-                this.reset();
+            // Sort functionality
+            const sortSelect = document.querySelector('.sort-options select');
+            sortSelect.addEventListener('change', function() {
+                // In a real implementation, this would sort the products
+                console.log('Sort by:', this.value);
+            });
+            
+            // Add to cart functionality
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('.current-price').textContent;
+                    
+                    alert(`${productName} added to cart! Price: ${productPrice}`);
+                    
+                    // Update cart count
+                    const cartCount = document.querySelector('.cart-count');
+                    cartCount.textContent = parseInt(cartCount.textContent) + 1;
+                });
             });
         });
     </script>
