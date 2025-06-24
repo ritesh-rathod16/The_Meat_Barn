@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmFresh - Farm-Fresh Meat & Dairy Delivered to Your Doorstep</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/50x50" alt="FarmFresh Logo">
+                    <div class="logo-text">
+                        <h1>FarmFresh</h1>
+                        <p>Farm-Fresh Meat & Dairy Delivered to Your Doorstep</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#">Shop by Category <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="goat.html">Goat</a>
+                                <a href="chicken.html">Chicken</a>
+                                <a href="seafood.html">Seafood</a>
+                                <a href="dairy.html">Dairy</a>
+                            </div>
+                        </li>
+                        <li><a href="offers.html">Offers</a></li>
+                        <li><a href="recipes.html">Recipes/Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-icons">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <a href="profile.html"><i class="far fa-user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-slider">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="slide-content">
+                        <h2>Fresh Goat Meat – 10% Off First Order!</h2>
+                        <p>Premium quality, hygienically packed, delivered to your doorstep</p>
+                        <a href="goat.html" class="btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="slide-content">
+                        <h2>Daily Dairy Delivery – Subscribe & Save</h2>
+                        <p>Get fresh milk, curd, paneer and more delivered daily with 15% discount</p>
+                        <a href="dairy-subscribe.html" class="btn">Explore Packs</a>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <div class="slide-content">
+                        <h2>Weekend Seafood Special – Free Delivery!</h2>
+                        <p>Fresh prawns, fish and crabs for your weekend feast</p>
+                        <a href="seafood.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="badge">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Delivery Over ₹500</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-lock"></i>
+                    <span>100% Secure Payments</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Hygienic Cold Packaging</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <a href="goat.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Meat">
+                    <div class="category-overlay">
+                        <h3>Goat Meat</h3>
+                        <p>Fresh cuts for all your recipes</p>
+                    </div>
+                </a>
+                <a href="chicken.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chicken">
+                    <div class="category-overlay">
+                        <h3>Chicken</h3>
+                        <p>Farm raised, antibiotic-free</p>
+                    </div>
+                </a>
+                <a href="seafood.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Seafood">
+                    <div class="category-overlay">
+                        <h3>Seafood</h3>
+                        <p>Fresh catch from the coast</p>
+                    </div>
+                </a>
+                <a href="dairy.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Dairy Products">
+                    <div class="category-overlay">
+                        <h3>Dairy Products</h3>
+                        <p>Milk, cheese, butter and more</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Best Selling Products -->
+    <section class="best-sellers">
+        <div class="container">
+            <h2 class="section-title">Best Selling Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Shoulder Curry Cut">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Goat Shoulder Curry Cut</h3>
+                        <div class="weight-options">
+                            <span class="weight-option selected" data-price="399">500g</span>
+                            <span class="weight-option" data-price="750">1kg</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">₹399</span>
+                            <span class="original-price">₹499</span>
+                            <span class="discount">20% OFF</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="1" data-name="Fresh Goat Shoulder Curry Cut" data-weight="500g" data-price="399">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Chicken Breast">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Chicken Breast (Boneless)</h3>
+                        <div class="weight-options">
+                            <span class="weight-option selected" data-price="249">500g</span>
+                            <span class="weight-option" data-price="450">1kg</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">₹249</span>
+                            <span class="original-price">₹299</span>
+                            <span class="discount">17% OFF</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="2" data-name="Fresh Chicken Breast (Boneless)" data-weight="500g" data-price="249">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Prawns">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Tiger Prawns (Medium)</h3>
+                        <div class="weight-options">
+                            <span class="weight-option selected" data-price="599">500g</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">₹599</span>
+                            <span class="original-price">₹699</span>
+                            <span class="discount">14% OFF</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="3" data-name="Fresh Tiger Prawns (Medium)" data-weight="500g" data-price="599">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Cow Milk">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Cow Milk (Pasteurized)</h3>
+                        <div class="weight-options">
+                            <span class="weight-option selected" data-price="65">1L</span>
+                        </div>
+                        <div class="price">
+                            <span class="current-price">₹65</span>
+                            <span class="original-price">₹75</span>
+                            <span class="discount">13% OFF</span>
+                        </div>
+                        <button class="btn add-to-cart" data-id="4" data-name="Fresh Cow Milk (Pasteurized)" data-weight="1L" data-price="65">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Promotional Banners -->
+    <section class="promo-banners">
+        <div class="container">
+            <a href="eid-special.html" class="promo-banner" style="background-image: url('https://images.unsplash.com/photo-1517244683847-7456b63c5969?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="promo-content">
+                    <h2>Eid Special – Bulk Goat Meat Orders at Wholesale Prices!</h2>
+                    <p>Order 5kg+ and get additional 5% discount</p>
+                    <span class="btn">Order Now</span>
+                </div>
+            </a>
+            
+            <a href="dairy-subscribe.html" class="promo-banner" style="background-image: url('https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="promo-content">
+                    <h2>Subscribe to Dairy Box – Save 15% Monthly!</h2>
+                    <p>Get daily essentials delivered on your schedule</p>
+                    <span class="btn">Subscribe Now</span>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <!-- USPs Section -->
+    <section class="usp-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Why Choose FarmFresh?</h2>
+            <div class="usp-grid">
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Next-Day Delivery</h3>
+                    <p>Order by 6PM, get it fresh the next morning</p>
+                </div>
+                
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Vacuum-Sealed & Frozen Fresh</h3>
+                    <p>Premium packaging to lock in freshness</p>
+                </div>
+                
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Certified Hygienic Processing</h3>
+                    <p>FSSAI approved facilities with strict quality checks</p>
+                </div>
+                
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>100% Money-Back Guarantee</h3>
+                    <p>Not satisfied? We'll refund your money</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"The chicken was so fresh, just like from the butcher! The delivery was prompt and the packaging was excellent."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ramesh">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ramesh</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"Regular dairy subscriber – never missed a delivery! The milk is always fresh and the prices are reasonable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"The seafood special was amazing! The prawns were so fresh and cleaned properly. Will definitely order again."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Arjun">
+                        </div>
+                        <div class="author-info">
+                            <h4>Arjun</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="goat.html">Goat Meat</a></li>
+                        <li><a href="chicken.html">Chicken</a></li>
+                        <li><a href="seafood.html">Seafood</a></li>
+                        <li><a href="dairy.html">Dairy Products</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="#">Quality Standards</a></li>
+                        <li><a href="#">Farm Partners</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="recipes.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get 10% off your first order!</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email address">
+                        <button class="btn">Subscribe</button>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <img src="https://via.placeholder.com/40x25" alt="Razorpay">
+                        <img src="https://via.placeholder.com/40x25" alt="UPI">
+                        <img src="https://via.placeholder.com/40x25" alt="Visa">
+                        <img src="https://via.placeholder.com/40x25" alt="Mastercard">
+                        <img src="https://via.placeholder.com/40x25" alt="COD">
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 FarmFresh. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple slider functionality for hero banner
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Auto slide every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        
+        function showTestimonial(n) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            currentTestimonial = (n + testimonials.length) % testimonials.length;
+            testimonials[currentTestimonial].classList.add('active');
+        }
+        
+        function nextTestimonial() {
+            showTestimonial(currentTestimonial + 1);
+        }
+        
+        // Auto slide testimonials every 7 seconds
+        setInterval(nextTestimonial, 7000);
+        
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = document.querySelector('.cart-count');
+        
+        function updateCartCount() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+        
+        // Weight selection
+        document.querySelectorAll('.weight-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.querySelectorAll('.weight-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                const price = this.dataset.price;
+                const priceElement = parent.nextElementSibling.querySelector('.current-price');
+                priceElement.textContent = `₹${price}`;
+                
+                // Update the add to cart button with new weight and price
+                const addToCartBtn = parent.nextElementSibling.nextElementSibling;
+                addToCartBtn.dataset.price = price;
+                addToCartBtn.dataset.weight = this.textContent;
+            });
+        });
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.dataset.id;
+                const name = this.dataset.name;
+                const weight = this.dataset.weight;
+                const price = parseFloat(this.dataset.price);
+                const image = this.closest('.product-card').querySelector('img').src;
+                
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id && item.weight === weight);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        weight,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update cart count
+                updateCartCount();
+                
+                // Show added to cart message
+                alert(`${name} (${weight}) added to cart!`);
+            });
+        });
+        
+        // Initialize cart count
+        updateCartCount();
+    </script>
+</body>
+</html>
