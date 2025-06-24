@@ -6,10 +6,215 @@
     <title>Goat Meat - FarmFresh</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reuse the same global styles from index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #e67e22;
+            margin: 10px auto 0;
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .category-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+        
+        .filter-options {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: #f1f1f1;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .filter-btn.active {
+            background-color: #e67e22;
+            color: white;
+        }
+        
+        .sort-options {
+            display: flex;
+            align-items: center;
+        }
+        
+        .sort-options select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-info h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .weight-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .weight-option {
+            font-size: 12px;
+            padding: 4px 8px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-right: 10px;
+        }
+        
+        .original-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #95a5a6;
+        }
+        
+        .discount {
+            font-size: 12px;
+            background-color: #fdeaea;
+            color: #e74c3c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #d35400;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header (same as index.html) -->
     <header>
         <div class="container">
             <div class="header-top">
@@ -23,303 +228,248 @@
                 
                 <nav>
                     <ul>
+                        <li><a href="index.html">Home</a></li>
                         <li class="dropdown">
-                            <a href="#">Shop by Category <i class="fas fa-chevron-down"></i></a>
+                            <a href="shop-by-category.html">Shop by Category <i class="fas fa-chevron-down"></i></a>
                             <div class="dropdown-content">
-                                <a href="goat.html">Goat</a>
+                                <a href="goat.html" class="active">Goat</a>
                                 <a href="chicken.html">Chicken</a>
                                 <a href="seafood.html">Seafood</a>
                                 <a href="dairy.html">Dairy</a>
                             </div>
                         </li>
                         <li><a href="offers.html">Offers</a></li>
-                        <li><a href="recipes.html">Recipes/Blog</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="recipes-blog.html">Recipes/Blog</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
                 
                 <div class="header-icons">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search products...">
-                        <i class="fas fa-search"></i>
-                    </div>
                     <a href="profile.html"><i class="far fa-user"></i></a>
                     <a href="cart.html" class="cart-icon">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
+                        <span class="cart-count">3</span>
                     </a>
                 </div>
             </div>
         </div>
-        
-        <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
     </header>
-    
-    <!-- Category Header -->
-    <section class="category-header">
-        <div class="container">
-            <h1>Goat Meat</h1>
-            <p>Fresh cuts for all your recipes - tender, flavorful, and hygienically processed</p>
+
+    <div class="container">
+        <h1 class="section-title">Goat Meat</h1>
+        
+        <div class="category-description">
+            <p>Premium quality goat meat, sourced directly from trusted farms. Our goat meat is hygienically processed, vacuum-packed and delivered fresh to your doorstep. Choose from a variety of cuts perfect for your favorite recipes.</p>
         </div>
-    </section>
-    
-    <!-- Products Grid -->
-    <section class="offer-content">
-        <div class="container">
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Shoulder Curry Cut">
-                    </div>
-                    <div class="product-info">
-                        <h3>Fresh Goat Shoulder Curry Cut</h3>
-                        <div class="weight-options">
-                            <span class="weight-option selected" data-price="399">500g</span>
-                            <span class="weight-option" data-price="750">1kg</span>
-                        </div>
-                        <div class="price">
-                            <span class="current-price">₹399</span>
-                            <span class="original-price">₹499</span>
-                            <span class="discount">20% OFF</span>
-                        </div>
-                        <button class="btn add-to-cart" data-id="1" data-name="Fresh Goat Shoulder Curry Cut" data-weight="500g" data-price="399">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Mince">
-                    </div>
-                    <div class="product-info">
-                        <h3>Fresh Goat Mince (Keema)</h3>
-                        <div class="weight-options">
-                            <span class="weight-option selected" data-price="349">500g</span>
-                            <span class="weight-option" data-price="650">1kg</span>
-                        </div>
-                        <div class="price">
-                            <span class="current-price">₹349</span>
-                            <span class="original-price">₹399</span>
-                            <span class="discount">13% OFF</span>
-                        </div>
-                        <button class="btn add-to-cart" data-id="5" data-name="Fresh Goat Mince (Keema)" data-weight="500g" data-price="349">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Leg Piece">
-                    </div>
-                    <div class="product-info">
-                        <h3>Fresh Goat Leg Piece (Boneless)</h3>
-                        <div class="weight-options">
-                            <span class="weight-option selected" data-price="499">500g</span>
-                            <span class="weight-option" data-price="950">1kg</span>
-                        </div>
-                        <div class="price">
-                            <span class="current-price">₹499</span>
-                            <span class="original-price">₹599</span>
-                            <span class="discount">17% OFF</span>
-                        </div>
-                        <button class="btn add-to-cart" data-id="6" data-name="Fresh Goat Leg Piece (Boneless)" data-weight="500g" data-price="499">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Ribs">
-                    </div>
-                    <div class="product-info">
-                        <h3>Fresh Goat Ribs</h3>
-                        <div class="weight-options">
-                            <span class="weight-option selected" data-price="299">500g</span>
-                            <span class="weight-option" data-price="550">1kg</span>
-                        </div>
-                        <div class="price">
-                            <span class="current-price">₹299</span>
-                            <span class="original-price">₹349</span>
-                            <span class="discount">14% OFF</span>
-                        </div>
-                        <button class="btn add-to-cart" data-id="7" data-name="Fresh Goat Ribs" data-weight="500g" data-price="299">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Liver">
-                    </div>
-                    <div class="product-info">
-                        <h3>Fresh Goat Liver</h3>
-                        <div class="weight-options">
-                            <span class="weight-option selected" data-price="199">500g</span>
-                        </div>
-                        <div class="price">
-                            <span class="current-price">₹199</span>
-                            <span class="original-price">₹249</span>
-                            <span class="discount">20% OFF</span>
-                        </div>
-                        <button class="btn add-to-cart" data-id="8" data-name="Fresh Goat Liver" data-weight="500g" data-price="199">Add to Cart</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Whole Goat Meat">
-                    </div>
-                    <div class="product-info">
-                        <h3>Whole Goat Meat (Cut & Packed)</h3>
-                        <div class="weight-options">
-                            <span class="weight-option selected" data-price="2999">5kg</span>
-                            <span class="weight-option" data-price="5500">10kg</span>
-                        </div>
-                        <div class="price">
-                            <span class="current-price">₹2,999</span>
-                            <span class="original-price">₹3,499</span>
-                            <span class="discount">14% OFF</span>
-                        </div>
-                        <button class="btn add-to-cart" data-id="9" data-name="Whole Goat Meat (Cut & Packed)" data-weight="5kg" data-price="2999">Add to Cart</button>
-                    </div>
-                </div>
+        
+        <div class="category-header">
+            <div class="filter-options">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Curry Cuts</button>
+                <button class="filter-btn">Boneless</button>
+                <button class="filter-btn">Special Cuts</button>
+            </div>
+            
+            <div class="sort-options">
+                <span>Sort by:</span>
+                <select>
+                    <option>Popularity</option>
+                    <option>Price - Low to High</option>
+                    <option>Price - High to Low</option>
+                    <option>Newest First</option>
+                </select>
             </div>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Shoulder Curry Cut">
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="goat.html">Goat Meat</a></li>
-                        <li><a href="chicken.html">Chicken</a></li>
-                        <li><a href="seafood.html">Seafood</a></li>
-                        <li><a href="dairy.html">Dairy Products</a></li>
-                        <li><a href="offers.html">Special Offers</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <ul>
-                        <li><a href="about.html">Our Story</a></li>
-                        <li><a href="#">Quality Standards</a></li>
-                        <li><a href="#">Farm Partners</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="recipes.html">Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to get 10% off your first order!</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Your email address">
-                        <button class="btn">Subscribe</button>
+                <div class="product-info">
+                    <h3>Fresh Goat Shoulder Curry Cut</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
                     </div>
-                    
-                    <div class="payment-methods">
-                        <img src="https://via.placeholder.com/40x25" alt="Razorpay">
-                        <img src="https://via.placeholder.com/40x25" alt="UPI">
-                        <img src="https://via.placeholder.com/40x25" alt="Visa">
-                        <img src="https://via.placeholder.com/40x25" alt="Mastercard">
-                        <img src="https://via.placeholder.com/40x25" alt="COD">
+                    <div class="price">
+                        <span class="current-price">₹399</span>
+                        <span class="original-price">₹499</span>
+                        <span class="discount">20% OFF</span>
                     </div>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2023 FarmFresh. All Rights Reserved.</p>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Mince">
+                </div>
+                <div class="product-info">
+                    <h3>Fresh Goat Mince (Keema)</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹349</span>
+                        <span class="original-price">₹399</span>
+                        <span class="discount">13% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Leg Curry Cut">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Leg Curry Cut</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹429</span>
+                        <span class="original-price">₹499</span>
+                        <span class="discount">14% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Boneless Cubes">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Boneless Cubes</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹499</span>
+                        <span class="original-price">₹599</span>
+                        <span class="discount">17% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Ribs">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Ribs</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹379</span>
+                        <span class="original-price">₹449</span>
+                        <span class="discount">16% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Liver">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Liver</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹299</span>
+                        <span class="original-price">₹349</span>
+                        <span class="discount">14% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Biryani Cut">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Biryani Cut</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹459</span>
+                        <span class="original-price">₹549</span>
+                        <span class="discount">16% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Curry Cut Mix">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Curry Cut Mix</h3>
+                    <div class="weight-options">
+                        <span class="weight-option">500g</span>
+                        <span class="weight-option">1kg</span>
+                    </div>
+                    <div class="price">
+                        <span class="current-price">₹389</span>
+                        <span class="original-price">₹449</span>
+                        <span class="discount">13% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
             </div>
         </div>
-    </footer>
-    
+    </div>
+
     <script>
-        // Cart functionality
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartCount = document.querySelector('.cart-count');
-        
-        function updateCartCount() {
-            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = totalItems;
-        }
-        
-        // Weight selection
-        document.querySelectorAll('.weight-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const parent = this.parentElement;
-                parent.querySelectorAll('.weight-option').forEach(opt => opt.classList.remove('selected'));
-                this.classList.add('selected');
-                
-                const price = this.dataset.price;
-                const priceElement = parent.nextElementSibling.querySelector('.current-price');
-                priceElement.textContent = `₹${price}`;
-                
-                // Update the add to cart button with new weight and price
-                const addToCartBtn = parent.nextElementSibling.nextElementSibling;
-                addToCartBtn.dataset.price = price;
-                addToCartBtn.dataset.weight = this.textContent;
+        // Goat category page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // In a real implementation, this would filter the products
+                });
+            });
+            
+            // Sort functionality
+            const sortSelect = document.querySelector('.sort-options select');
+            sortSelect.addEventListener('change', function() {
+                // In a real implementation, this would sort the products
+                console.log('Sort by:', this.value);
+            });
+            
+            // Add to cart functionality
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('.current-price').textContent;
+                    
+                    alert(`${productName} added to cart! Price: ${productPrice}`);
+                    
+                    // Update cart count
+                    const cartCount = document.querySelector('.cart-count');
+                    cartCount.textContent = parseInt(cartCount.textContent) + 1;
+                });
             });
         });
-        
-        // Add to cart functionality
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                const id = this.dataset.id;
-                const name = this.dataset.name;
-                const weight = this.dataset.weight;
-                const price = parseFloat(this.dataset.price);
-                const image = this.closest('.product-card').querySelector('img').src;
-                
-                // Check if item already in cart
-                const existingItem = cart.find(item => item.id === id && item.weight === weight);
-                
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push({
-                        id,
-                        name,
-                        weight,
-                        price,
-                        image,
-                        quantity: 1
-                    });
-                }
-                
-                // Save to localStorage
-                localStorage.setItem('cart', JSON.stringify(cart));
-                
-                // Update cart count
-                updateCartCount();
-                
-                // Show added to cart message
-                alert(`${name} (${weight}) added to cart!`);
-            });
-        });
-        
-        // Initialize cart count
-        updateCartCount();
     </script>
 </body>
 </html>
