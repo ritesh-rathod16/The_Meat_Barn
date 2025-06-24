@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - FarmFresh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse the same global styles from index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #e67e22;
+            margin: 10px auto 0;
+        }
+        
+        .cart-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .cart-items {
+            flex: 2;
+        }
+        
+        .cart-summary {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .cart-item-img {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-price {
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background: #eee;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .remove-item {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .summary-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .total-row {
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        
+        .checkout-btn:hover {
+            background: #2ecc71;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .empty-cart i {
+            font-size: 50px;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+        
+        .empty-cart p {
+            margin-bottom: 20px;
+        }
+        
+        .continue-shopping {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #e67e22;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/50x50" alt="FarmFresh Logo">
+                    <div class="logo-text">
+                        <h1>FarmFresh</h1>
+                        <p>Farm-Fresh Meat & Dairy Delivered to Your Doorstep</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop-by-category.html">Shop by Category</a></li>
+                        <li><a href="offers.html">Offers</a></li>
+                        <li><a href="recipes-blog.html">Recipes/Blog</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-icons">
+                    <a href="profile.html"><i class="far fa-user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="section-title">Your Shopping Cart</h1>
+        
+        <div class="cart-container">
+            <div class="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+                <div class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Goat Shoulder Curry Cut">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3 class="cart-item-title">Fresh Goat Shoulder Curry Cut</h3>
+                        <div class="cart-item-price">₹399</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="remove-item">Remove</button>
+                    </div>
+                </div>
+                
+                <div class="cart-item">
+                    <div class="cart-item-img">
+                        <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fresh Chicken Breast">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3 class="cart-item-title">Fresh Chicken Breast (Boneless)</h3>
+                        <div class="cart-item-price">₹249</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="2" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="remove-item">Remove</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <h3 class="summary-title">Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal (3 items)</span>
+                    <span>₹897</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <span>₹50</span>
+                </div>
+                <div class="summary-row">
+                    <span>Taxes</span>
+                    <span>₹80</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span>₹1027</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Quantity controls
+            document.querySelectorAll('.quantity-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentNode.querySelector('.quantity-input');
+                    let value = parseInt(input.value);
+                    
+                    if (this.classList.contains('minus') {
+                        if (value > 1) {
+                            input.value = value - 1;
+                        }
+                    } else if (this.classList.contains('plus')) {
+                        input.value = value + 1;
+                    }
+                    
+                    updateCartTotal();
+                });
+            });
+            
+            // Remove item
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.cart-item').remove();
+                    updateCartTotal();
+                });
+            });
+            
+            // Update cart total
+            function updateCartTotal() {
+                let subtotal = 0;
+                let itemCount = 0;
+                
+                document.querySelectorAll('.cart-item').forEach(item => {
+                    const priceText = item.querySelector('.cart-item-price').textContent;
+                    const price = parseFloat(priceText.replace('₹', ''));
+                    const quantity = parseInt(item.querySelector('.quantity-input').value);
+                    
+                    subtotal += price * quantity;
+                    itemCount += quantity;
+                });
+                
+                const deliveryFee = 50;
+                const taxes = subtotal * 0.1; // 10% tax
+                const total = subtotal + deliveryFee + taxes;
+                
+                document.querySelector('.summary-row:nth-child(1) span:last-child').textContent = `₹${subtotal.toFixed(0)}`;
+                document.querySelector('.summary-row:nth-child(1) span:first-child').textContent = `Subtotal (${itemCount} items)`;
+                document.querySelector('.summary-row:nth-child(3) span:last-child').textContent = `₹${taxes.toFixed(0)}`;
+                document.querySelector('.summary-row.total-row span:last-child').textContent = `₹${total.toFixed(0)}`;
+                
+                // Update cart count in header
+                document.querySelector('.cart-count').textContent = itemCount;
+            }
+        });
+    </script>
+</body>
+</html>
