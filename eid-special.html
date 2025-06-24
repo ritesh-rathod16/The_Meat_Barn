@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Special - FarmFresh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse the same global styles from index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #e67e22;
+            margin: 10px auto 0;
+        }
+        
+        .offer-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .offer-image {
+            height: 400px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .offer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .offer-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #7f8c8d;
+            line-height: 1.8;
+        }
+        
+        .offer-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .highlight-item {
+            text-align: center;
+            max-width: 200px;
+        }
+        
+        .highlight-icon {
+            font-size: 40px;
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-info h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .weight-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .weight-option {
+            font-size: 12px;
+            padding: 4px 8px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-right: 10px;
+        }
+        
+        .original-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #95a5a6;
+        }
+        
+        .discount {
+            font-size: 12px;
+            background-color: #fdeaea;
+            color: #e74c3c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #d35400;
+        }
+        
+        .bulk-order {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .bulk-order h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .bulk-order p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+        }
+        
+        .bulk-order-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .submit-btn:hover {
+            background-color: #d35400;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .offer-highlights {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .offer-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/50x50" alt="FarmFresh Logo">
+                    <div class="logo-text">
+                        <h1>FarmFresh</h1>
+                        <p>Farm-Fresh Meat & Dairy Delivered to Your Doorstep</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop-by-category.html">Shop by Category</a></li>
+                        <li><a href="offers.html" class="active">Offers</a></li>
+                        <li><a href="recipes-blog.html">Recipes/Blog</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-icons">
+                    <a href="profile.html"><i class="far fa-user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="offer-header">
+            <h1 class="section-title">Eid Special - Bulk Goat Meat Orders</h1>
+            <div class="offer-image">
+                <img src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eid Special Offer">
+            </div>
+            <div class="offer-description">
+                <p>Celebrate Eid with our premium quality goat meat at wholesale prices! Order in bulk (5kg or more) and get an additional 5% discount on top of our already low prices. Perfect for family gatherings and feasts. All meat is hygienically processed, vacuum-packed and delivered fresh to your doorstep.</p>
+            </div>
+        </div>
+        
+        <div class="offer-highlights">
+            <div class="highlight-item">
+                <div class="highlight-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h3>Extra 5% Off</h3>
+                <p>On orders of 5kg or more</p>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Free Delivery</h3>
+                <p>On all bulk orders</p>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Premium Quality</h3>
+                <p>Hygienically processed</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Popular Bulk Packs</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Meat Family Pack">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Meat Family Pack (5kg)</h3>
+                    <div class="price">
+                        <span class="current-price">₹1,999</span>
+                        <span class="original-price">₹2,495</span>
+                        <span class="discount">20% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Biryani Pack">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Biryani Pack (7kg)</h3>
+                    <div class="price">
+                        <span class="current-price">₹2,799</span>
+                        <span class="original-price">₹3,493</span>
+                        <span class="discount">20% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Mince Bulk Pack">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Mince Bulk Pack (5kg)</h3>
+                    <div class="price">
+                        <span class="current-price">₹1,749</span>
+                        <span class="original-price">₹1,995</span>
+                        <span class="discount">12% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Curry Cut Bulk">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Curry Cut Bulk (10kg)</h3>
+                    <div class="price">
+                        <span class="current-price">₹3,899</span>
+                        <span class="original-price">₹4,990</span>
+                        <span class="discount">22% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Boneless Bulk">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Boneless Bulk (5kg)</h3>
+                    <div class="price">
+                        <span class="current-price">₹2,499</span>
+                        <span class="original-price">₹2,995</span>
+                        <span class="discount">17% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Goat Premium Mix">
+                </div>
+                <div class="product-info">
+                    <h3>Goat Premium Mix (8kg)</h3>
+                    <div class="price">
+                        <span class="current-price">₹3,199</span>
+                        <span class="original-price">₹3,992</span>
+                        <span class="discount">20% OFF</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bulk-order">
+            <h3>Need a Custom Bulk Order?</h3>
+            <p>Fill out the form below and our team will contact you with a special quote</p>
+            
+            <form class="bulk-order-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Approximate Quantity Needed (kg)</label>
+                    <input type="number" id="quantity" min="5" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cuts">Preferred Cuts</label>
+                    <select id="cuts" multiple>
+                        <option>Curry Cut</option>
+                        <option>Biryani Cut</option>
+                        <option>Boneless</option>
+                        <option>Mince (Keema)</option>
+                        <option>Special Cuts</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="delivery-date">Preferred Delivery Date</label>
+                    <input type="date" id="delivery-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Request Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Eid special page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add to cart functionality
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('.current-price').textContent;
+                    
+                    alert(`${productName} added to cart! Price: ${productPrice}`);
+                    
+                    // Update cart count
+                    const cartCount = document.querySelector('.cart-count');
+                    cartCount.textContent = parseInt(cartCount.textContent) + 1;
+                });
+            });
+            
+            // Bulk order form submission
+            const bulkOrderForm = document.querySelector('.bulk-order-form');
+            bulkOrderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your bulk order request! Our team will contact you shortly with a quote.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
